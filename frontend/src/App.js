@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import './App.css';
 import { Switch, Route, Link } from "react-router-dom";
 
