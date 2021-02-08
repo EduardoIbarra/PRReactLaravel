@@ -45,6 +45,16 @@ const Movie = props => {
     setCurrentMovie({...currentMovie, [key]: value});
   }
 
+  const deleteMovie = () => {
+    MovieService.remove(currentMovie.id)
+    .then(response => {
+      props.history.push('/movies');
+    })
+    .catch(e => {
+      console.log(e);
+    });
+  }
+
   return (
     <div>
       {currentMovie ? (
@@ -103,6 +113,9 @@ const Movie = props => {
           <br />
           <button onClick={updateMovie} className="btn btn-primary">
             Guardar Película
+          </button>
+          <button onClick={deleteMovie} className="btn btn-danger">
+            Eliminar Película
           </button>
           <div>
             <p>{message}</p>
